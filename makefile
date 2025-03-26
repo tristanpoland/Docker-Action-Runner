@@ -7,3 +7,6 @@ IMAGE_NAME := github-runner
 .PHONY: build
 build:
 	docker build --tag $(IMAGE_NAME) .
+
+up: build
+	docker-compose up -d
