@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  github-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GITHUB_ORG=${GITHUB_ORG}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
