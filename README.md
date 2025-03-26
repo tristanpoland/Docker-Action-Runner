@@ -2,6 +2,11 @@
 
 A containerized self-hosted GitHub Actions runner that allows you to run your GitHub Actions workflows locally in Docker.
 
+## Security Warning
+
+> [!WARNING]
+> The GitHub access token is built into the Docker image during the build process. If this image is published to a public registry, anyone who downloads it could potentially extract the token and use it to access your GitHub organization and run jobs. This could lead to security breaches, unauthorized access to repositories, or abuse of your GitHub resources. Always keep images with embedded tokens private and consider using runtime secrets injection methods instead for production deployments.
+
 ## Features
 
 - Automatically downloads and configures the latest GitHub Actions runner
